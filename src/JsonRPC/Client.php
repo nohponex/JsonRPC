@@ -195,4 +195,9 @@ class Client
             ->withPayload($this->httpClient->execute($payload, $headers))
             ->parse();
     }
+    
+    public function __clone()
+    {
+       $this->httpClient = clone $this->httpClient;
+    }
 }
