@@ -446,4 +446,9 @@ class HttpClient
         }
         return $headers;
     }
+            
+    public function __clone()
+    {
+        $this->headers = unserialize(serialize($this->headers));
+    }
 }
